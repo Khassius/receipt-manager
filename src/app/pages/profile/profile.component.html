@@ -1,0 +1,44 @@
+<div class="div-card">
+    <mat-card>
+        <mat-card-header class="card-title">
+            <mat-card-title>MY PROFILE</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card_content div-flex">
+            <p [ngStyle]="{'background-color' : 'darkcyan'}"><mat-icon>account_circle</mat-icon>name></p>
+            <p><mat-icon>email</mat-icon>test@gmail.com</p>
+        </mat-card-content>
+        <mat-card-actions>
+            
+            <form [formGroup]="favReceiptsForm" (ngSubmit)="addFavReceipt()">
+                <div>
+                    <mat-form-field>
+                        <mat-label for="favReceipt">Add your favourite receipt!</mat-label>
+                        <textarea matInput rows="1" cols="25" formControlName="favReceipt"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="break"></div>
+                <div>
+                    <button mat-raised-button color="primary" type="submit">Add</button>
+                </div>
+            </form>
+        </mat-card-actions>
+    
+
+    </mat-card>
+    <div class="break"></div>
+                <div *ngIf="favReceipts.length">
+                    <table>
+                        <tr>
+                            <th>My favourite receipts:</th>
+                            <th>adden on:</th>
+                        </tr>
+                        <tr *ngFor="let favReceipt of favReceipts; let i = index;"
+                            [ngStyle]="{'background-color' : i % 2 === 0 ? 'darkcyan' : 'cyan'}">
+                            <td>{{favReceipt.favReceipt}}</td>
+                            <td>{{favReceipt.date | dateFormat}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="break"></div>
+</div>

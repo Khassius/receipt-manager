@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfejl-2023-6a614": {
+      "hosting": {
+        "receipt-manager": [
+          "webfejl-2023-6a614"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfejl-2023-6a614"
+  }
+}
